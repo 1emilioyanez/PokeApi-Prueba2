@@ -1,0 +1,20 @@
+# Python - Archivos temporales y compilados
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# Docker - Archivos de sistema de contenedores
+.dockerignore
+
+# IDEs y Editores (VS Code, etc)
+.vscode/
+.idea/
+
+# Sistema Operativo
+Thumbs.db
+.DS_Store
+
+# Archivos de log
+*.log
