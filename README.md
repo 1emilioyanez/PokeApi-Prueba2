@@ -33,5 +33,5 @@ Para ejecutar este proyecto, necesitas tener instalados:
 
 ### 1. Clonar el repositorio
 ```bash
-git clone [https://github.com/1emilioyanez/PokeApi-Prueba2.git](https://github.com/1emilioyanez/PokeApi-Prueba2.git)
+git clone https://github.com/1emilioyanez/PokeApi-Prueba2.git
 cd PokeApi-Prueba2
