@@ -1,22 +1,37 @@
-# Buscador Técnico de Estadísticas - PokeAPI
+# 🚀 Proyecto PokeAPI - Automatización y Contenerización
 
-## A. Definición del Contexto
-**Stakeholder:** Analistas de datos de la Liga Pokémon y Entrenadores Profesionales.
-**Propuesta de Valor:** Esta herramienta elimina la necesidad de consultar bases de datos externas lentas durante un torneo. Permite a los analistas obtener estadísticas base (Vida y Ataque) de forma instantánea mediante consola para decidir movimientos tácticos en tiempo real.
+## 📝 Introducción
+Este proyecto es una aplicación interactiva desarrollada en **Python** que consume datos de la **PokeAPI**. El objetivo principal es demostrar habilidades en el ciclo de vida de desarrollo de software (SDLC) mediante la **contenerización** con Docker y la **automatización de despliegue** (CI/CD) utilizando Jenkins.
 
-## B. Guía de Configuración
-Para el correcto funcionamiento, se pueden configurar las siguientes variables de entorno:
-* `POKEAPI_URL`: URL base para las consultas (por defecto: https://pokeapi.co/api/v2/pokemon/).
+La aplicación permite al usuario consultar información básica de cualquier Pokémon (Nombre, HP, Ataque) y manejar errores de conexión o datos no encontrados de manera segura.
 
-## C. Instrucciones de Ejecución (Docker)
-1. Construir la imagen:
-   ```bash
-   docker build -t pokeapi-app .
 ---
 
-### 2. Crear el archivo `.gitignore`
-Es un requisito obligatorio para evitar subir archivos basura o sensibles al repositorio[cite: 29, 57]. Crea un archivo llamado `.gitignore` (con el punto al principio) y pega esto:
+## 🌟 Propuesta de Valor
+Este sistema resuelve el problema de la consistencia en los entornos de ejecución. Al utilizar **Docker**, garantizamos que la aplicación funcione exactamente igual en la máquina de un desarrollador, en el servidor de la universidad o en la nube, eliminando el clásico "en mi máquina sí funciona".
 
+---
+
+## 🏗️ Requisitos del Sistema
+Para ejecutar este proyecto, necesitas tener instalados:
+* **Docker**: Para construir y correr el contenedor.
+* **Jenkins**: Para la orquestación del Pipeline de automatización.
+* **Git**: Para el control de versiones.
+* **Python 3.10+**: (Opcional, si se corre fuera de Docker).
+
+---
+
+## 🛠️ Tecnologías Utilizadas
+* **Lenguaje:** Python (librería `requests`).
+* **Contenerización:** Docker (Imagen base `python:3.10-slim`).
+* **CI/CD:** Jenkins (Pipeline as Code).
+* **Seguridad:** Uso de la librería `os` para manejo de variables de entorno y protección de rutas.
+
+---
+
+## 🚀 Instrucciones de Ejecución
+
+### 1. Clonar el repositorio
 ```bash
-docker run -it --name samplerunning pokeapi-app
----
+git clone [https://github.com/1emilioyanez/PokeApi-Prueba2.git](https://github.com/1emilioyanez/PokeApi-Prueba2.git)
+cd PokeApi-Prueba2
