@@ -1,9 +1,15 @@
 #!/bin/bash
 
-# Construir la imagen
+# 1. Construir la imagen
 echo "Construyendo la imagen pokeapi-app..."
 docker build -t pokeapi-app .
 
-# contenedor
+# 2. Ejecutar el contenedor (sin -it para que no falle en Jenkins)
 echo "Iniciando el contenedor..."
-docker run -it --name samplerunning pokeapi-app
+# Usamos el nombre 'samplerunning' como pide la guía para el Pipeline [cite: 67, 68]
+docker run --name samplerunning pokeapi-app
+
+# 3. Documentar la salida (Opcional pero recomendado para el output.txt) [cite: 33]
+echo "Generando registro de salida..."
+docker ps -a --filter "name=samplerunning" > output.txt
+docker logs samplerunning >> output.txt
