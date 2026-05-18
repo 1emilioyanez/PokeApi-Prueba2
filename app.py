@@ -3,8 +3,6 @@ import os
 
 # Funcion principal para buscar datos del pokemon
 def buscar_pokemon():
-    # Se utiliza la libreria os para recuperar variables de entorno si fueran necesarias
-    # Segun la guia, no debe haber hardcoding de llaves [cite: 26-27]
     api_url_base = os.getenv('POKEAPI_URL', 'https://pokeapi.co/api/v2/pokemon/')
     
     print("\n--- POKE-BUSCADOR INTERACTIVO ---")
@@ -16,12 +14,10 @@ def buscar_pokemon():
     url = f"{api_url_base}{nombre}"
 
     try:
-        # Peticion con timeout de 10 segundos [cite: 25]
         response = requests.get(url, timeout=10)
         response.raise_for_status() 
         data = response.json()
         
-        # Procesamiento de 3 campos de datos: Vida, Ataque y Foto [cite: 25]
         vida = data['stats'][0]['base_stat']
         ataque = data['stats'][1]['base_stat']
         foto = data['sprites']['front_default']
@@ -32,7 +28,7 @@ def buscar_pokemon():
         print(f"Ataque: {ataque}")
         print(f"URL Imagen: {foto}")
 
-    # Manejo de al menos 4 tipos de errores 
+    # Manejo de 4 errores 
     except requests.exceptions.HTTPError:
         print(f"Error 1 (HTTP): No se encontro a '{nombre}'.")
     except requests.exceptions.ConnectionError:
